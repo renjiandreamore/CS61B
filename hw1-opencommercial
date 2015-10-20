@@ -1,0 +1,42 @@
+
+import java.io.*;
+import java.net.*;
+
+
+public class OpenCommercial1 {
+	public static void main(String[] arg) throws Exception {
+
+	    BufferedReader keyboard;
+	    String inputLine;
+	    String url;
+	    URL address;
+	    
+	    
+	    keyboard = new BufferedReader(new InputStreamReader(System.in));//缓存读取更快
+
+	    System.out.print("Please enter the name of a company (without spaces): ");
+	    System.out.flush();       /* Make sure the line is printed immediately. */
+	    inputLine = keyboard.readLine();
+
+	    /* Replace this comment with your solution.  */
+	    
+	    url = "http://www." + inputLine + ".com/";
+	    address = new URL(url);
+	    InputStreamReader ins = new InputStreamReader(address.openStream());
+	    BufferedReader br = new BufferedReader(ins);
+	    
+	    String line1 = br.readLine();
+	    String line2 = br.readLine();
+	    String line3 = br.readLine();
+	    String line4 = br.readLine();
+	    String line5 = br.readLine();
+	    
+	    
+	    System.out.println(line5);
+	    System.out.println(line4);
+	    System.out.println(line3);
+	    System.out.println(line2);
+	    System.out.println(line1);
+	  }
+
+}
